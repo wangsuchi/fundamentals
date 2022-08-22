@@ -1,7 +1,8 @@
 package Exercise8;
 
-import Exercise7.Interfaces;
+import Exercise6.Interfaces;
 
+//test interface is implicitly public. So implement from another package
 public class Implemented implements Interfaces {
     @Override
     public void print(){
@@ -12,6 +13,4 @@ public class Implemented implements Interfaces {
         new Implemented().print();
     }
 }
-//you can inherit(extend) from only one concrete class.But You can implement from as many interfaces as you want.
-//You place all the interface names after the implements' keyword, separating them with commas.
-//And the concrete class must come first, then the interfaces
+

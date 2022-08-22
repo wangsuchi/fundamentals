@@ -1,4 +1,4 @@
-package Exercise7;
+package Exercise6;
 
 //Exercise 3:  Create a base class with an abstract print( ) method that is overridden in a
 // derived class. The overridden version of the method prints the value of an int variable

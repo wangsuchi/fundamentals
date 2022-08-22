@@ -1,15 +1,9 @@
-package Exercise7;
+package Exercise6;
 
 public interface Interfaces {
     int primitiveTest = 1;
     void print();
 }
-
-
-
-
-
-
 
 
 //You can choose to explicitly declare the methods in an interface as public, but they are
