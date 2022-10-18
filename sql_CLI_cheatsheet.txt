@@ -24,6 +24,7 @@ Adding a column: ALTER TABLE [table] ADD COLUMN [column] VARCHAR(120);
 Adding a column with an unique, auto-incrementing ID: ALTER TABLE [table] ADD COLUMN [column] int NOT NULL AUTO_INCREMENT PRIMARY KEY;
 
 Inserting a record: INSERT INTO [table] ([column], [column]) VALUES ('[value]', '[value]');
+Inserting multiple records: INSERT INTO [table] ([column],[column]) VALUES ('[value]', '[value]'),('[value]', '[value]'),('[value]', '[value]');
 
 MySQL function for datetime input: NOW()
 
