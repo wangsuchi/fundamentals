@@ -107,3 +107,8 @@ Grant ALL access to user for * tables: GRANT ALL ON database.* TO 'user'@'localh
 
 Find out the IP Address of the Mysql Host
 SHOW VARIABLES WHERE Variable_name = 'hostname'; (source)
+
+
+how to insert a string (VARCHAR) value that contains quotations.
+1.Escape the quotes with a backslash: "This text has \"quotes\" in it" or 'This text has \'quotes\' in it'
+2.Alternate single and double quotes: "This text has 'quotes' in it" or 'This text has "quotes" in it'
