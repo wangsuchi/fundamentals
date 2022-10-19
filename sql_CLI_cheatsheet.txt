@@ -11,6 +11,8 @@ Select database: use [database];
 
 Determine what database is in use: select database();
 
+execute a sql source file: source [filepath]/xxx.sql; (if source file is under current path, then run source xxx.sql;)
+
 Show all tables: show tables;
 
 Show table structure: DESC [table];
