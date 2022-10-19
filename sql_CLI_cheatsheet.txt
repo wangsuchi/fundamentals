@@ -50,6 +50,7 @@ Select a range: SELECT * FROM [table] WHERE [column] BETWEEN [value1] and [value
 
 Select with custom order and only limit: SELECT * FROM [table] WHERE [column] ORDER BY [column] ASC LIMIT [value]; (Order: DESC, ASC)
 
+A good thumb of rule is to always SELECT before UPDATE
 Updating records: UPDATE [table] SET [column] = '[updated-value]' WHERE [column] = [value];
 
 Deleting records: DELETE FROM [table] WHERE [column] = [value];
