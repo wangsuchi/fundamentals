@@ -116,3 +116,6 @@ SHOW VARIABLES WHERE Variable_name = 'hostname'; (source)
 how to insert a string (VARCHAR) value that contains quotations.
 1.Escape the quotes with a backslash: "This text has \"quotes\" in it" or 'This text has \'quotes\' in it'
 2.Alternate single and double quotes: "This text has 'quotes' in it" or 'This text has "quotes" in it'
+
+GOOGLE for [mysql string functions reference manual]  
+https://dev.mysql.com/doc/refman/8.0/en/string-functions.html
