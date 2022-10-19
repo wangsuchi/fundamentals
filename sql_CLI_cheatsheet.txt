@@ -50,9 +50,10 @@ Select a range: SELECT * FROM [table] WHERE [column] BETWEEN [value1] and [value
 
 Select with custom order and only limit: SELECT * FROM [table] WHERE [column] ORDER BY [column] ASC LIMIT [value]; (Order: DESC, ASC)
 
-A good thumb of rule is to always SELECT before UPDATE
+A good thumb of rule is to always SELECT before UPDATE. THERE IS NO UNDO BUTTON!!
 Updating records: UPDATE [table] SET [column] = '[updated-value]' WHERE [column] = [value];
 
+A good thumb of rule is to always SELECT before DELETE. THERE IS NO UNDO BUTTON!!
 Deleting records: DELETE FROM [table] WHERE [column] = [value];
 
 Delete all records from a table (without dropping the table itself): DELETE FROM [table]; (This also resets the incrementing counter for auto generated columns like an id column.)
