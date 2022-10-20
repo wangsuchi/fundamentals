@@ -40,6 +40,7 @@ Counting records: SELECT COUNT([column]) FROM [table];
 
 Counting and selecting grouped records: SELECT *, (SELECT COUNT([column]) FROM [table]) AS count FROM [table] GROUP BY [column];
 
+WHERE has to go after FROM
 Selecting specific records: SELECT * FROM [table] WHERE [column] = [value]; (Selectors: <, >, !=; combine multiple selectors with AND, OR)
 
 Select records containing [value]: SELECT * FROM [table] WHERE [column] LIKE '%[value]%';
