@@ -120,4 +120,23 @@ how to insert a string (VARCHAR) value that contains quotations.
 GOOGLE for [mysql string functions reference manual]  
 https://dev.mysql.com/doc/refman/8.0/en/string-functions.html
 string functions of often use:
-CONCAT(stringbuilder),
+1.CONCAT(stringbuilder),
+ex: SELECT CONCAT(title, '-', author_fname, '-', author_lname) FROM books;
+ex: SELECT CONCAT_WS(' - ', title, author_fname, author_lname) FROM books;
+2.SUBSTRING
+ex: SELECT SUBSTRING('Hello World', 1, 4); ⇒Hell
+ex: SELECT SUBSTRING('Hello World', 7);⇒World
+ex: SELECT SUBSTRING('Hello World', -3);⇒rld
+ex: SELECT SUBSTRING(title, 1, 10) AS 'short title' FROM books;
+3.REPLACE
+ex: SELECT CONCAT(SUBSTRING(title, 1, 10), '...') AS 'short title' FROM books;
+4.CHAR_LENGTH
+ex:
+SELECT 
+  CONCAT(author_lname, ' is ', CHAR_LENGTH(author_lname), ' characters long') 
+FROM books;
+5.UPPER LOWER
+UPPER only takes one argument (we can't CONCAT(UPPER(author_fname, ' ', author_lname)))
+ex:
+SELECT UPPER(CONCAT(author_fname, ' ', author_lname)) AS "full name in caps"
+FROM books;
