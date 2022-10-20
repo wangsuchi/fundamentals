@@ -146,3 +146,11 @@ UPPER only takes one argument (we can't CONCAT(UPPER(author_fname, ' ', author_l
 ex:
 SELECT UPPER(CONCAT(author_fname, ' ', author_lname)) AS "full name in caps"
 FROM books;
+
+
+
+
+
+DATA TYPE:
+1.VARCHAR CHAR
+
