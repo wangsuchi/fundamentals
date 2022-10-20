@@ -1,3 +1,5 @@
+SQL is case insensitive
+
 Commands
 Access monitor: mysql -u [username] -p; (will prompt for password)
 
