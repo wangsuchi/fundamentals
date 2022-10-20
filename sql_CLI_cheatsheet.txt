@@ -43,10 +43,11 @@ Counting and selecting grouped records: SELECT *, (SELECT COUNT([column]) FROM [
 WHERE has to go after FROM
 Selecting specific records: SELECT * FROM [table] WHERE [column] = [value]; (Selectors: <, >, !=; combine multiple selectors with AND, OR)
 
+The percent sign (%) represents zero, one, or multiple characters
+The underscore sign (_) represents one, single character
+
 Select records containing [value]: SELECT * FROM [table] WHERE [column] LIKE '%[value]%';
-
 Select records starting with [value]: SELECT * FROM [table] WHERE [column] LIKE '[value]%';
-
 Select records starting with val and ending with ue: SELECT * FROM [table] WHERE [column] LIKE '[val_ue]';
 
 Select a range: SELECT * FROM [table] WHERE [column] BETWEEN [value1] and [value2];
