@@ -39,6 +39,7 @@ Explain records: EXPLAIN SELECT * FROM [table];
 Selecting parts of records: SELECT [column], [another-column] FROM [table];
 
 Counting records: SELECT COUNT([column]) FROM [table];
+Counting unique records: SELECT COUNT(DISTINCT COUNT[column]) FROM [table];
 
 Counting and selecting grouped records: SELECT *, (SELECT COUNT([column]) FROM [table]) AS count FROM [table] GROUP BY [column];
 
