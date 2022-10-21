@@ -153,4 +153,6 @@ FROM books;
 
 DATA TYPE:
 1.VARCHAR CHAR
-
+CHAR is used to store character strings of fixed length.IF you store 'ab' into column with type CHAR(4), it adds 2 spaces.So it's actually stored as 'ab  ',and the storage size won't change unlike varchar
+VARCHAR is used to store character strings of variable length.
+2.Decimal(5,2)⇒Decimal(total number of digit,digits after decimal),ex:199.22
