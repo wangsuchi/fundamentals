@@ -174,5 +174,14 @@ DATE_FORMAT        SELECT DATE_FORMAT(birthdt, 'Was born on a %W') FROM people;
 they all are used for values that contain both date and time parts. While the supported range is different. And TIMESTAMPS takes less store place.
 DATETIME type: '1000-01-01 00:00:00'~'9999-12-31 23:59:59'
 TIMESTAMPS type: '1970-01-01 00:00:01'~'2038-01-19 03:14:07'
+(2)examples:
+CREATE TABLE comments (
+    content VARCHAR(100),
+    created_at TIMESTAMP DEFAULT NOW()
+);
 
+CREATE TABLE comments2 (
+    content VARCHAR(100),
+    changed_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
+);
 
