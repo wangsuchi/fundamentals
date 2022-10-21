@@ -155,7 +155,9 @@ DATA TYPE:
 1.VARCHAR CHAR
 CHAR is used to store character strings of fixed length.IF you store 'ab' into column with type CHAR(4), it adds 2 spaces.So it's actually stored as 'ab  ',and the storage size won't change unlike varchar
 VARCHAR is used to store character strings of variable length.
+
 2.Decimal(5,2)⇒Decimal(total number of digit,digits after decimal),ex:199.22
+
 3.Date Time DateTime
 (1)Date Format 'yyyy-mm-dd'
 (2)Time Format 'hh:mm:ss'
@@ -166,3 +168,11 @@ CURDATE() return current date
 CURTIME() return current time
 NOW() return current datetime
 DATE_FORMAT        SELECT DATE_FORMAT(birthdt, 'Was born on a %W') FROM people;
+
+4.TIMESTAMPS
+(1)difference between DATETIME:
+they all are used for values that contain both date and time parts. While the supported range is different.
+DATETIME type: '1000-01-01 00:00:00'~'9999-12-31 23:59:59'
+TIMESTAMPS type: '1970-01-01 00:00:01'~'2038-01-19 03:14:07'
+
+
