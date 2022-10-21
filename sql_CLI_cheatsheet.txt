@@ -30,8 +30,6 @@ Adding a column with an unique, auto-incrementing ID: ALTER TABLE [table] ADD CO
 Inserting a record: INSERT INTO [table] ([column], [column]) VALUES ('[value]', '[value]');
 Inserting multiple records: INSERT INTO [table] ([column],[column]) VALUES ('[value]', '[value]'),('[value]', '[value]'),('[value]', '[value]');
 
-MySQL function for datetime input: NOW()
-
 Selecting records: SELECT * FROM [table];
 
 Explain records: EXPLAIN SELECT * FROM [table];
