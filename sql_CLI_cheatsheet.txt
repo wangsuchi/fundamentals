@@ -116,6 +116,7 @@ Grant ALL access to user for * tables: GRANT ALL ON database.* TO 'user'@'localh
 Find out the IP Address of the Mysql Host
 SHOW VARIABLES WHERE Variable_name = 'hostname'; (source)
 
+if-case in Mysql: SELECT title, released_year, CASE WHEN released_year >= 2000 THEN 'Modern Lit' ELSE '20th Century Lit' END AS GENRE FROM books;
 
 how to insert a string (VARCHAR) value that contains quotations.
 1.Escape the quotes with a backslash: "This text has \"quotes\" in it" or 'This text has \'quotes\' in it'
@@ -144,9 +145,6 @@ UPPER only takes one argument (we can't CONCAT(UPPER(author_fname, ' ', author_l
 ex:
 SELECT UPPER(CONCAT(author_fname, ' ', author_lname)) AS "full name in caps"
 FROM books;
-
-
-
 
 
 DATA TYPE:
