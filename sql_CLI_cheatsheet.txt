@@ -160,7 +160,9 @@ VARCHAR is used to store character strings of variable length.
 (1)Date Format 'yyyy-mm-dd'
 (2)Time Format 'hh:mm:ss'
 (3)DateTime Format 'yyyy-mm-dd hh:mm:ss'
-(4) function
+(4) function 
+https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html
 CURDATE() return current date
 CURTIME() return current time
 NOW() return current datetime
+DATE_FORMAT        SELECT DATE_FORMAT(birthdt, 'Was born on a %W') FROM people;
