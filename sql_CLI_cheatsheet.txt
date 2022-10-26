@@ -106,6 +106,11 @@ Select from multiple tables: SELECT [table1].[column], [table1].[another-column]
 
 Combine rows from different tables: SELECT * FROM [table1] INNER JOIN [table2] ON [table1].[column] = [table2].[column];
 
+# implicit inner join
+SELECT first_name,last_name,order_date,amount FROM customers,orders WHERE customers.id = customer_id;
+# explicit inner join
+SELECT first_name,last_name,order_date,amount FROM customers JOIN orders ON customers.id = customer_id;
+
 Combine rows from different tables but do not require the join condition: SELECT * FROM [table1] LEFT OUTER JOIN [table2] ON [table1].[column] = [table2].[column]; (The left table is the first table that appears in the statement.)
 
 Rename column or table using an alias: SELECT [table1].[column] AS '[value]', [table2].[column] AS '[value]' FROM [table1], [table2];
