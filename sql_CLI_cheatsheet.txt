@@ -58,6 +58,8 @@ Select a range: SELECT * FROM [table] WHERE [column] BETWEEN [value1] and [value
 Select with custom order and only limit: SELECT * FROM [table] WHERE [column] ORDER BY [column] ASC LIMIT [value]; (Order: DESC, ASC)
 Another way to write orderby: SELECT title, author_fname, author_lname FROM books ORDER BY 1; ⇒SELECT title, author_fname, author_lname FROM books ORDER BY title;
 
+Subquery: SELECT * FROM orders WHERE customer_id=(SELECT id FROM customers WHERE last_name='George');
+
 A good thumb of rule is to always SELECT before UPDATE. THERE IS NO UNDO BUTTON!!
 Updating records: UPDATE [table] SET [column] = '[updated-value]' WHERE [column] = [value];
 
