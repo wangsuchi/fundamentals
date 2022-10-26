@@ -28,6 +28,9 @@ Crete new table with foreign key: CREATE TABLE orders(id INT AUTO_INCREMENT PRIM
 Create table with check constraints: CREATE TABLE users ( username VARCHAR(20) NOT NULL, age INT CHECK (age > 0));
 Name a constraint when creating table: CREATE TABLE users2 (username VARCHAR(20) NOT NULL, age INT, CONSTRAINT age_not_negative CHECK (age >= 0));
 
+multiple column constraints: 
+CREATE TABLE companies (name VARCHAR(255) NOT NULL,address VARCHAR(255) NOT NULL,CONSTRAINT name_address UNIQUE (name ,address));
+
 Create table with column with unique value: CREATE TABLE [table](phone VARCHAR(15) NOT NULL UNIQUE);
 
 Adding a column: ALTER TABLE [table] ADD COLUMN [column] VARCHAR(120);
