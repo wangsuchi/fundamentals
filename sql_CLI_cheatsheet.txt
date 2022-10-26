@@ -223,3 +223,13 @@ CREATE TABLE comments2 (
     changed_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
 );
 
+
+
+create a view(virtual table of query result):
+CREATE VIEW full_reviews AS
+SELECT  title, released_year, genre, rating, first_name, last_name
+FROM reviews
+JOIN series ON series.id = reviews.series_id
+JOIN reviewers ON reviewers.id = reviews.reviewer_id;
+
+then we can show tables; or SELECT * FROM full_reviews;
