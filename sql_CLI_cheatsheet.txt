@@ -119,6 +119,17 @@ assign 0 if value is null:
 function IFNULL
 ex→ SELECT IFNULL(SUM(amount),0) AS total_spent FROM customers LEFT JOIN orders ON customers.id = orders.customer_id GROUP BY customers/id;
 
+DELETE corresponding child records automatically when the rows from parent table are deleted: ON DELETE CASCADE:
+CREATE TABLE orders(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_date DATE,
+    amount DECIMAL(8,2),
+    customer_id INT,
+    FOREIGN KEY(customer_id) 
+        REFERENCES customers(id)
+        ON DELETE CASCADE
+);
+
 Users functions
 List all users: SELECT User,Host FROM mysql.user;
 
