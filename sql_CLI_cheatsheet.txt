@@ -115,6 +115,10 @@ Combine rows from different tables but do not require the join condition: SELECT
 
 Rename column or table using an alias: SELECT [table1].[column] AS '[value]', [table2].[column] AS '[value]' FROM [table1], [table2];
 
+assign 0 if value is null: 
+function IFNULL
+ex→ SELECT IFNULL(SUM(amount),0) AS total_spent FROM customers LEFT JOIN orders ON customers.id = orders.customer_id GROUP BY customers/id;
+
 Users functions
 List all users: SELECT User,Host FROM mysql.user;
 
