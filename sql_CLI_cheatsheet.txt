@@ -232,4 +232,4 @@ FROM reviews
 JOIN series ON series.id = reviews.series_id
 JOIN reviewers ON reviewers.id = reviews.reviewer_id;
 
-then we can show tables; or SELECT * FROM full_reviews;
+then we can treate it as if it were a table. like, show tables; or SELECT * FROM full_reviews;
