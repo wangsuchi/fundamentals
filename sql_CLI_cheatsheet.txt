@@ -26,6 +26,7 @@ Create new table with columns: CREATE TABLE [table] ([column] VARCHAR(120), [ano
 Crete new table with foreign key: CREATE TABLE orders(id INT AUTO_INCREMENT PRIMARY KEY, order_date DATE,amount DECIMAL(8,2),customer_id INT, FOREIGN KEY(customer_id) REFERENCES customers(id)); (column customer_id references column id in table customers)
 
 Create table with check constraints: CREATE TABLE users ( username VARCHAR(20) NOT NULL, age INT CHECK (age > 0));
+Name a constraint when creating table: CREATE TABLE users2 (username VARCHAR(20) NOT NULL, age INT, CONSTRAINT age_not_negative CHECK (age >= 0));
 
 Create table with column with unique value: CREATE TABLE [table](phone VARCHAR(15) NOT NULL UNIQUE);
 
