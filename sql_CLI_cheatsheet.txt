@@ -23,6 +23,8 @@ List all indexes on a table: show index from [table];
 
 Create new table with columns: CREATE TABLE [table] ([column] VARCHAR(120), [another-column] DATETIME);
 
+Crete new table with foreign key: CREATE TABLE orders(id INT AUTO_INCREMENT PRIMARY KEY, order_date DATE,amount DECIMAL(8,2),customer_id INT, FOREIGN KEY(customer_id) REFERENCES customers(id)); (column customer_id references column id in table customers)
+
 Adding a column: ALTER TABLE [table] ADD COLUMN [column] VARCHAR(120);
 
 Adding a column with an unique, auto-incrementing ID: ALTER TABLE [table] ADD COLUMN [column] int NOT NULL AUTO_INCREMENT PRIMARY KEY;
