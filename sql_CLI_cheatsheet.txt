@@ -243,6 +243,11 @@ Window Functions:
 https://dev.mysql.com/doc/refman/8.0/en/window-functions-usage.html
 it performs aggregate operations on groups of rows, but they produce a result FOR EACH ROW
 
+1.OVER(): construcs a window.when it's empty, the window includes all records.
+2.OVER(PARTITION BY [column]): to form rows into groups of row
+3.OVER(ORDER BY [column])⇒rolling : to re-order rows within each window
+4.RANK(PARTITION BY [column] /*ORDER BY [column]*/): returns the rank of the current row within its partition with gaps
+5.RANK(ORDER BY [column])
 
 
 Here is the complete sequence for sql server :
