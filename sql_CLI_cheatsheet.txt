@@ -240,8 +240,8 @@ then we can treate it as if it were a table. like, show tables; or SELECT * FROM
 ALTER a view: CREATE OR REPLACE VIEW blahblahblah(same as before)
 
 Window Functions:
+https://dev.mysql.com/doc/refman/8.0/en/window-functions-usage.html
 it performs aggregate operations on groups of rows, but they produce a result FOR EACH ROW
-
 
 
 
