@@ -237,3 +237,25 @@ then we can treate it as if it were a table. like, show tables; or SELECT * FROM
 
 Window Functions:
 it performs aggregate operations on groups of rows, but they produce a result FOR EACH ROW
+
+
+
+learning materials:
+
+More advanced SQL
+
+https://www.hackerrank.com/domains/sql
+
+https://leetcode.com/study-plan/sql/
+
+https://www.tutorialspoint.com/mysql/index.htm
+
+https://sqlzoo.net/wiki/SQL_Tutorial
+
+YouTube Creators (advanced)
+
+https://www.youtube.com/c/techTFQ
+
+https://www.youtube.com/c/LearnatKnowstar
+
+https://www.youtube.com/channel/UCfGTc8zyBjCGg-Ilc4oAxEg/videos
