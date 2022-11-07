@@ -1,3 +1,43 @@
+critical questions:
+1. what is git?
+version control system = vcs, can track & manage changes to files over time.
+It allows users to revisit or revert to earlier versions of files, compare changes between versions, undo changes, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 GIT configuration:
 git config --global user.name "Your Name"                 Set the name that will be attached to your commits and tags
 git config --global user.email "you@example.com"          Set the e-mail address that will be attached to your commits and tags.
