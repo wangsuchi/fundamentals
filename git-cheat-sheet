@@ -94,3 +94,7 @@ git fetch [remote]                                        Fetch changes from the
 git pull [remote]                                         Fetch changes from the remote and merge current branch with its upstream.
 git push [--tags] [remote]                                Push local changes to the remote.
 git push -u [remote] [branch]                             Push local branch to remote repository.
+
+
+git reference(command options description)
+https://git-scm.com/docs
