@@ -23,7 +23,8 @@ like, make xxxx do frotz, instead of [this patch] makes xxxx do frotz or I chang
 6. .gitignore
 Create a file called .gitignore in the root of a repo. Inside the file, we can write patterns to tell Git which files & folders to ignore
 
-
+7. what is head?
+head is a pointer or reference to the current branch
 
 
 GIT configuration:
