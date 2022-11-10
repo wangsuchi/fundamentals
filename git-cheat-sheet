@@ -68,6 +68,7 @@ git checkout --[file]                                     Discard changes in wor
 git reset [file]                                          Revert your repository to a previous known working state.
 git commit                                                Create a new commit from changes added to the staging area.The commit must have a message!(default: vim editor)
 git commit -m "my message"
+git commit --amend                                        redo the previous commit
 git rm [file]                                             Remove file from working directory and staging area.
 git stash                                                 Put current changes in your working directory into stash for later use
 git stash pop                                             Apply stored stash content into working directory, and clear stash.
