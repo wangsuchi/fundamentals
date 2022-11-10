@@ -56,6 +56,8 @@ Git branching model:
 git branch [-a]                                           List all local branches in repository
 git branch [branch name]                                  Create new branch, referencing the current HEAD.
 git checkout [-b][branch name]                            Switch working directory to the specified branch. With -b: Git will create the specified branch if it does not exist.
+git switch [branch name]                                  newer way to switch to [branch name]. Do exactly same thing as git checkout. 
+git switch -c [new branch name]                           create a new branch and switch to it.
 git merge [from name]                                     Join specified [from name] branch into your current branch
 git branch -d [name]                                      Remove selected branch, if it is already merged into any other. 
 
