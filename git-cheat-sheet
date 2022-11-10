@@ -59,7 +59,8 @@ git checkout [-b][branch name]                            Switch working directo
 git switch [branch name]                                  newer way to switch to [branch name]. Do exactly same thing as git checkout. 
 git switch -c [new branch name]                           create a new branch and switch to it.
 git merge [from name]                                     Join specified [from name] branch into your current branch
-git branch -d [name]                                      Remove selected branch, if it is already merged into any other. 
+git branch -d [branch name]                               Remove selected branch, if it is already merged into any other. 
+git branch -m [branch name]                               Rename the current branch name                                      
 
 Review your work
 git log [-n count]                                        List commit history of current branch. -n count limits list to last n commits.
