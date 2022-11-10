@@ -11,7 +11,7 @@ Github is a service that hosts Git repositories in the cloud, which makes it eas
 a repository is a data structure that stores metadata for a set of files or directory structure
 Most people prefer to have 1 repo per project,so always run git status before git init to make sure you're not in a repo before you initialize.
 
-
+4.working directory　→(git add)→　staging area　→(git commit)→ repository
 
 
 
