@@ -13,10 +13,12 @@ Most people prefer to have 1 repo per project,so always run git status before gi
 
 4.working directory　→(git add)→　staging area　→(git commit)→ repository
 
-5.atomic commits
+5.Rules of commit
+(1) atomic commit
 When possible, a commit should encompass a single feature, change, or fix. In other words, try to keep each commit focused on a single thing.
 This makes it much easier to undo or rollback changes later on. It also makes your code or project easier to review.
-
+(2) present-tense imperative writing style
+like, make xxxx do frotz, instead of [this patch] makes xxxx do frotz or I changed xxxx to do frotz
 
 
 
@@ -64,7 +66,7 @@ git diff [file]                                           Show changes between w
 git diff --staged [file]                                  Shows any changes between the staging area and the repository
 git checkout --[file]                                     Discard changes in working directory.
 git reset [file]                                          Revert your repository to a previous known working state.
-git commit                                                Create a new commit from changes added to the staging area.The commit must have a message!
+git commit                                                Create a new commit from changes added to the staging area.The commit must have a message!(vim editor)
 git commit -m "my message"
 git rm [file]                                             Remove file from working directory and staging area.
 git stash                                                 Put current changes in your working directory into stash for later use
