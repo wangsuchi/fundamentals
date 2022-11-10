@@ -13,7 +13,9 @@ Most people prefer to have 1 repo per project,so always run git status before gi
 
 4.working directory　→(git add)→　staging area　→(git commit)→ repository
 
-
+5.atomic commits
+When possible, a commit should encompass a single feature, change, or fix. In other words, try to keep each commit focused on a single thing.
+This makes it much easier to undo or rollback changes later on. It also makes your code or project easier to review.
 
 
 
