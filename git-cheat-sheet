@@ -24,7 +24,14 @@ like, make xxxx do frotz, instead of [this patch] makes xxxx do frotz or I chang
 Create a file called .gitignore in the root of a repo. Inside the file, we can write patterns to tell Git which files & folders to ignore
 
 7. what is head?
-head is a pointer or reference to the current branch
+head is a pointer or reference to the current branch.head is {ref: refs/heads/[current branch name]}.
+If you look at this file, you can see hash code of a commit.
+
+8.resolving merge conflicts
+(1)Open up the file with merge conflicts
+(2)Edit the file to remove the conflicts.Decide which branch's content you want to keep in each conflict.Or keep the content from both.
+(3)Remove the conflict "markers" in the document
+(4)Add your changes and then make a commit.
 
 
 GIT configuration:
