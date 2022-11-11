@@ -31,6 +31,8 @@ If you look at this file, you can see hash code of a commit.
 HEAD→branch→commit hash
 When we make a new commit, the branch pointer is updated to reflect the new commit.
 The HEAD remains the same, because it's pointing at the branch reference.
+DETACHED HEAD is a particular situation. When we checkout a specific commit, HEAD points at that commit rather than at the branch pointer.
+
 
 9.resolving merge conflicts
 (1)Open up the file with merge conflicts
@@ -51,8 +53,8 @@ git config --global user.email "you@example.com"          Set the e-mail address
 git config --global color.ui auto                         Enable some colorization of Git output.
 
 START A Project:
-git init [project name]                                   Create a new local repository
-git clone [project url]                                   Downloads a project with the entire history from the remote repository.
+git init [project-name]                                   Create a new local repository
+git clone [project-url]                                   Downloads a project with the entire history from the remote repository.
 
 Day-To-Day Work:
 git status                                                Displays the status of your working directory. Options include new,staged, and modified files. 
@@ -78,13 +80,14 @@ git diff [commit1's hash]..[commit2's hash]               Show changes between c
 
 Git branching model:
 git branch [-a]                                           List all local branches in repository
-git branch [branch name]                                  Create new branch, referencing the current HEAD.
-git checkout [-b][branch name]                            Switch working directory to the specified branch. With -b: Git will create the specified branch if it does not exist.
+git branch [branch-name]                                  Create new branch, referencing the current HEAD.
+git checkout [-b][branch-name]                            Switch working directory to the specified branch. With -b: Git will create the specified branch if it does not exist.
+git checkout [commit-hash]                                Switch HEAD to specific commit
 git switch [branch name]                                  newer way to switch to [branch name]. Do exactly same thing as git checkout. 
-git switch -c [new branch name]                           create a new branch and switch to it.
+git switch -c [new branch-name]                           create a new branch and switch to it.
 git merge [from name]                                     Join specified [from name] branch into your current branch
-git branch -d [branch name]                               Remove selected branch, if it is already merged into any other. 
-git branch -m [branch name]                               Rename the current branch name                                      
+git branch -d [branch-name]                               Remove selected branch, if it is already merged into any other. 
+git branch -m [branch-name]                               Rename the current branch name                                      
 
 Review your work
 git log [-n count]                                        List commit history of current branch. -n count limits list to last n commits.
