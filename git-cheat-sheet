@@ -51,8 +51,8 @@ git status                                                Displays the status of
                                                           It will retrieve branch name, current commit identifier, and changes pending commit.
 git add [file]                                            Add specific files to the staging area. Separate files with spaces to add multiple at once. 
 git diff [file]                                           Show changes between working directory and staging area
-git diff HEAD [file]                                      Lists all changes in the working tree since ur last commit.
-git diff --staged [file]                                  Shows any changes between the staging area and the repository
+git diff HEAD [file]                                      Shows all changes between working directory and the repository.
+git diff --staged/cached [file]                           Shows any changes between the staging area and the repository.
 git checkout --[file]                                     Discard changes in working directory.
 git reset [file]                                          Revert your repository to a previous known working state.
 git commit                                                Create a new commit from changes added to the staging area.The commit must have a message!(default: vim editor)
