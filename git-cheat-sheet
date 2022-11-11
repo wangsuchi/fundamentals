@@ -50,9 +50,6 @@ Day-To-Day Work:
 git status                                                Displays the status of your working directory. Options include new,staged, and modified files. 
                                                           It will retrieve branch name, current commit identifier, and changes pending commit.
 git add [file]                                            Add specific files to the staging area. Separate files with spaces to add multiple at once. 
-git diff [file]                                           Show changes between working directory and staging area
-git diff HEAD [file]                                      Shows all changes between working directory and the repository.
-git diff --staged/cached [file]                           Shows any changes between the staging area and the repository.
 git checkout --[file]                                     Discard changes in working directory.
 git reset [file]                                          Revert your repository to a previous known working state.
 git commit                                                Create a new commit from changes added to the staging area.The commit must have a message!(default: vim editor)
@@ -63,6 +60,11 @@ git rm [file]                                             Remove file from worki
 git stash                                                 Put current changes in your working directory into stash for later use
 git stash pop                                             Apply stored stash content into working directory, and clear stash.
 git stash drop                                            Delete a specific stash from all your previous stashes. 
+
+Git Diff:
+git diff [file]                                           Show changes between working directory and staging area
+git diff --staged/cached [file]                           Shows any changes between the staging area and the repository.
+git diff HEAD [file]                                      Shows all changes between  (working directory + the staging area) and the repository.
 
 Git branching model:
 git branch [-a]                                           List all local branches in repository
