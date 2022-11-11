@@ -65,7 +65,7 @@ Git Diff:
 git diff [file]                                           Show changes between working directory and staging area
 git diff --staged/cached [file]                           Shows any changes between the staging area and the repository.
 git diff HEAD [file]                                      Shows all changes between  (working directory + the staging area) and the repository.
-git diff [branch name]..[branch name]                     Show changes between branches
+git diff [branch1]..[branch2]                             Show changes between branch1 and branch2
 
 Git branching model:
 git branch [-a]                                           List all local branches in repository
