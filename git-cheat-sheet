@@ -60,7 +60,7 @@ Day-To-Day Work:
 git status                                                Displays the status of your working directory. Options include new,staged, and modified files. 
                                                           It will retrieve branch name, current commit identifier, and changes pending commit.
 git add [file]                                            Add specific files to the staging area. Separate files with spaces to add multiple at once. 
-git checkout --[file]                                     Discard changes in working directory.
+git checkout HEAD [file]                                  Discard changes in working directory.
 git reset [file]                                          Revert your repository to a previous known working state.
 git commit                                                Create a new commit from changes added to the staging area.The commit must have a message!(default: vim editor)
 git commit -m "my message"
@@ -82,7 +82,11 @@ Git branching model:
 git branch [-a]                                           List all local branches in repository
 git branch [branch-name]                                  Create new branch, referencing the current HEAD.
 git checkout [-b][branch-name]                            Switch working directory to the specified branch. With -b: Git will create the specified branch if it does not exist.
-git checkout [commit-hash]                                Switch HEAD to specific commit
+git checkout [commit-hash]                                Switch HEAD to a previous specific commit(time traveling).You can see your detached head status with git status. 
+                                                          You can go back to the latest branch(return to normal) with git switch [branch-name]
+or
+git checkout HEAD~1/2/3/4                                 HEAD~1 refers to the commit before HEAD, HEAD~2 refers to 2 commits before HEAD
+
 git switch [branch name]                                  newer way to switch to [branch name]. Do exactly same thing as git checkout. 
 git switch -c [new branch-name]                           create a new branch and switch to it.
 git merge [from name]                                     Join specified [from name] branch into your current branch
