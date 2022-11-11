@@ -33,6 +33,9 @@ If you look at this file, you can see hash code of a commit.
 (3)Remove the conflict "markers" in the document
 (4)Add your changes and then make a commit.
 
+9 merge type
+(1)fast-forward merge : literally move your main branch's tip forward to(catch up) the end of your feature branch.(main branch stay unchanged when u edit your current branch)
+
 
 GIT configuration:
 git config --global user.name "Your Name"                 Set the name that will be attached to your commits and tags
