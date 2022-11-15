@@ -61,7 +61,6 @@ git status                                                Displays the status of
                                                           It will retrieve branch name, current commit identifier, and changes pending commit.
 git add [file]                                            Add specific files to the staging area. Separate files with spaces to add multiple at once. 
 git checkout HEAD [file]                                  Discard changes in working directory.
-git reset [file]                                          Revert your repository to a previous known working state.
 git commit                                                Create a new commit from changes added to the staging area.The commit must have a message!(default: vim editor)
 git commit -m "my message"
 git commit -am "my message"                               add to staging area & commit with comment "my message"
@@ -106,9 +105,8 @@ git log ..ref                                             List commit that are p
 git reflog                                                List operations (e.g. checkouts or commits) made on local repository.
 
 Reverting changes
-git reset [--hard] [target reference]                     Switches the current branch to the target reference, leaving a difference as an uncommitted 
-                                                          change. When --hard is used, all changes are discarded.
-git revert [commit sha]                                   Create a new commit, reverting changes from the specified commit. 
+git reset [commit-hash]                                   Reset your repository to a previous specific commit.the changes are still remained in working directory
+git reset [--hard] [target reference]                     When --hard is used, all changes,both commits and the actual changes in your file are discarded.
 
 Synchronizing repositories
 git fetch [remote]                                        Fetch changes from the remote, but not update tracking branches.
