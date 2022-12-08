@@ -5,4 +5,36 @@
   (3)The vm overhead causes higher utilization of resources,including disk consumption, which is usually gigabytes in size. Wherereas docker container is 
      lightly, which is usually megabytes in size⇒results in faster boot-up
   This is not an either A or B situation. You will often see containers provisioned on virtual machine  
+3.Containers are meant to run a specific task or process such as to host an instance of a web server or db or application server.
+Once the task is complete, the container exits. So a container only lives as long as the process inside it.
+4. Container dependent on particular image.
+5.docker command
+  (1)docker run [image_name]                           if the image is not present on the host it will go out to docker hub and pull it down
+  (2)docker run -d [image_name]                        run in the background
+  (3)docker run [image_name:{version_number}]          docker run redis:4.0←tag appended (if not specified, will be the latest version)
+  (4)docker run -it                                    The -it instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive bash shell in the container. 
+  (5)docker run --name [container_name] [image_name]   you can customize the container name by option --name
+  (6)docker pull [image_name]                          pull image only without running it
+  (7)docker ps                                         list all running containers and some basic information(containerID,image,status,names←containerNameRandomlyMadeUpByPC)
+  (8)docker ps -a                                      list all running as well as previously stopped or exited containers
+  (9)docker stop [containerID/name]
+  (10)docker rm [containerID/name]                      delete container for good
+  (11)docker images                                     list all images
+  (12)docker rmi [image_name]                          Must ensure that no containers are running off of that image before attempting to remove image.Must stop and
+                                                       delete all dependent containers before deleting that image.
+  (13)docker rm $(docker ps -aq)                       remove all containers at once  
+  (14)docker exec [containerID/name] [linux_command]   execute command inside container, docker exec cla19d3a7ca7 cat /etc/hosts
+  (15)docker inspect [containerID]                     get the internal ip address of container
   
+6.Run - PORT mapping
+docker run -p 80:8080 kodekloud/webapp (map docker host port 80 with container port 8080)
+One docker host port can map to only one single container port. 
+container has its own default internal ip address, you can access with this ip address inside the docker server.
+
+7.Run- Volume mapping
+docker run -v /opt/datadir:/var/lib/mysql mysql(docker_host_path:container_path )
+when docker container runs, it will implicitly mount the external directory to a folder inside the docker container.In this way, your data is still there even if the container is deleted.
+
+
+
+
