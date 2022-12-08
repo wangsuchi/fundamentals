@@ -1,1 +1,8 @@
-
+1. the main purpose of docker is to package and containerize apps and to ship them and run them anywhere anytime you want
+2. difference between docker vs virtual machine?
+  (1)docker shares hardware instructure and os. The containers that run on docker only contains software and its libraries and dependencies
+  (2)vm runs on hypervisor, which runs on hardware infrastructure. every vm has its own os and other necessary libraries and dependencies.⇒more isolation
+  (3)The vm overhead causes higher utilization of resources,including disk consumption, which is usually gigabytes in size. Wherereas docker container is 
+     lightly, which is usually megabytes in size⇒results in faster boot-up
+  This is not an either A or B situation. You will often see containers provisioned on virtual machine  
+  
