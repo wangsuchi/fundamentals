@@ -1,13 +1,17 @@
 1. the main purpose of docker is to package and containerize apps and to ship them and run them anywhere anytime you want
+
 2. difference between docker vs virtual machine?
   (1)docker shares hardware instructure and os. The containers that run on docker only contains software and its libraries and dependencies
   (2)vm runs on hypervisor, which runs on hardware infrastructure. every vm has its own os and other necessary libraries and dependencies.⇒more isolation
   (3)The vm overhead causes higher utilization of resources,including disk consumption, which is usually gigabytes in size. Wherereas docker container is 
      lightly, which is usually megabytes in size⇒results in faster boot-up
   This is not an either A or B situation. You will often see containers provisioned on virtual machine  
+  
 3.Containers are meant to run a specific task or process such as to host an instance of a web server or db or application server.
 Once the task is complete, the container exits. So a container only lives as long as the process inside it.
+
 4. Container dependent on particular image.
+
 5.docker command
   (1)docker run [image_name]                           if the image is not present on the host it will go out to docker hub and pull it down
   (2)docker run -d [image_name]                        run in the background
@@ -25,7 +29,7 @@ Once the task is complete, the container exits. So a container only lives as lon
                                                        delete all dependent containers before deleting that image.
   (14)docker rm $(docker ps -aq)                       remove all containers at once  
   (15)docker exec [containerID/name] [linux_command]   execute command inside container, docker exec cla19d3a7ca7 cat /etc/hosts
-  (16)docker inspect [containerID]                     get the internal ip address of container
+  (16)docker inspect [containerID]                     get information, like the internal ip address of container,the environment variable
   (17)docker build [dockerfile_path] -t [image_name]   build your own image by running dockerfile, option -t is to customize the image name
   (18)docker push [image_name]                         push your image to docker hub.the image name here needs to be changed to [hubdocker_userpath/image_name] 
   
