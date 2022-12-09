@@ -14,24 +14,31 @@ Once the task is complete, the container exits. So a container only lives as lon
 
 5.docker command
   (1)docker run [image_name]                           if the image is not present on the host it will go out to docker hub and pull it down
-  (2)docker run -d [image_name]                        run in the background
+  (2)docker run -d [image_name]                        run in the background(in detached mode)
   (3)docker run [image_name:{version_number}]          docker run redis:4.0←tag appended (if not specified, will be the latest version)
   (4)docker run -it [image_name]                       -it instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive bash shell in the container. 
   (5)docker run --name [container_name] [image_name]   you can customize the container name by option --name
   (6)docker run -e [environment_variable] [image_name] when run an image, set an environment variable as well
-  (7)docker pull [image_name]                          pull image only without running it
-  (8)docker ps                                         list all running containers and some basic information(containerID,image,status,names←containerNameRandomlyMadeUpByPC)
-  (9)docker ps -a                                      list all running as well as previously stopped or exited containers
-  (10)docker stop [containerID/name]
-  (11)docker rm [containerID/name]                      delete container for good
-  (12)docker images                                     list all images
-  (13)docker rmi [image_name]                          Must ensure that no containers are running off of that image before attempting to remove image.Must stop and
+  
+  deprecated --link option: to link 2 containers together
+  (7)docker run -d --name=vote -p 5000:80              
+  --link redis:redis voting-app                        to link container redis to the host that the voting app is looking for, which is also redis
+  (this,in fact, creates an entry into /etc/hosts on the voting app container, adding a domain name with the internal IP of the redis container)
+  
+  (8)docker pull [image_name]                          pull image only without running it
+  (9)docker ps                                         list all running containers and some basic information(containerID,image,status,names←containerNameRandomlyMadeUpByPC)
+  (10)docker ps -a                                     list all running as well as previously stopped or exited containers
+  (11)docker stop [containerID/name]
+  (12)docker rm [containerID/name]                     delete container for good
+  (13)docker images                                    list all images
+  (14)docker rmi [image_name]                          Must ensure that no containers are running off of that image before attempting to remove image.Must stop and
                                                        delete all dependent containers before deleting that image.
-  (14)docker rm $(docker ps -aq)                       remove all containers at once  
-  (15)docker exec [containerID/name] [linux_command]   execute command inside container, docker exec cla19d3a7ca7 cat /etc/hosts
-  (16)docker inspect [containerID]                     get information, like the internal ip address of container,the environment variable
-  (17)docker build [dockerfile_path] -t [image_name]   build your own image by running dockerfile, option -t is to customize the image name
-  (18)docker push [image_name]                         push your image to docker hub.the image name here needs to be changed to [hubdocker_userpath/image_name] 
+  (15)docker rm $(docker ps -aq)                       remove all containers at once  
+  (16)docker exec [containerID/name] [linux_command]   execute command inside container, docker exec cla19d3a7ca7 cat /etc/hosts
+  (17)docker inspect [containerID]                     get information, like the internal ip address of container,the environment variable
+  (18)docker build [dockerfile_path] -t [image_name]   build your own image by running dockerfile, option -t is to customize the image name
+  (19)docker push [image_name]                         push your image to docker hub.the image name here needs to be changed to [hubdocker_userpath/image_name] 
+  (20)docker-compose up                                run compose file
   
 6.Run - PORT mapping
 docker run -p 80:8080 kodekloud/webapp (map docker host port 80 with container port 8080)
@@ -70,4 +77,42 @@ layer 5. entrypoint
 
 in case step 3 was failed, it will reuse the previous layers from cache and continue to build the remaining layers.
 If you were to add additional steps in dockerfile,docker will rebuild the changed layers only.
+
+9. Docker compose
+we need to first make sure that all images exist in local host, then we can docker-compose up
+use yaml file,docker-compose.yml, to bring up the entire application stack. But it can only work when all containers are in one single docker host.
+
+docker compose- version 1
+it attaches all containers it runs to the default bridge network.and then use link to enable communication between the containers 
+docker compose- version 2
+it automatically creates a dedicated bridge network for this application and then attaches all containers to that new network.all containers are then
+able to communicate with each other using its name. no need to use link anymore
+docker compose- version 3
+has everything of version 2, with support for docker swarm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
