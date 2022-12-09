@@ -12,7 +12,7 @@ Once the task is complete, the container exits. So a container only lives as lon
   (1)docker run [image_name]                           if the image is not present on the host it will go out to docker hub and pull it down
   (2)docker run -d [image_name]                        run in the background
   (3)docker run [image_name:{version_number}]          docker run redis:4.0←tag appended (if not specified, will be the latest version)
-  (4)docker run -it                                    The -it instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive bash shell in the container. 
+  (4)docker run -it [image_name]                       -it instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive bash shell in the container. 
   (5)docker run --name [container_name] [image_name]   you can customize the container name by option --name
   (6)docker pull [image_name]                          pull image only without running it
   (7)docker ps                                         list all running containers and some basic information(containerID,image,status,names←containerNameRandomlyMadeUpByPC)
@@ -25,16 +25,40 @@ Once the task is complete, the container exits. So a container only lives as lon
   (13)docker rm $(docker ps -aq)                       remove all containers at once  
   (14)docker exec [containerID/name] [linux_command]   execute command inside container, docker exec cla19d3a7ca7 cat /etc/hosts
   (15)docker inspect [containerID]                     get the internal ip address of container
+  (16)docker build [dockerfile_path] -t [image_name]   build your own image by running dockerfile, option -t is to customize the image name
+  (17)docker push [image_name]                         push your image to docker hub.the image name here needs to be changed to [hubdocker_userpath/image_name] 
   
 6.Run - PORT mapping
 docker run -p 80:8080 kodekloud/webapp (map docker host port 80 with container port 8080)
 One docker host port can map to only one single container port. 
 container has its own default internal ip address, you can access with this ip address inside the docker server.
 
+Docker: Unable to access container's internal IP from host
+https://stackoverflow.com/questions/71155466/docker-unable-to-access-containers-internal-ip-from-host
+
 7.Run- Volume mapping
 docker run -v /opt/datadir:/var/lib/mysql mysql(docker_host_path:container_path )
 when docker container runs, it will implicitly mount the external directory to a folder inside the docker container.In this way, your data is still there even if the container is deleted.
 
+8. Create my own image
+Docker can build images automatically by reading the instructions from a Dockerfile. 
+A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. 
 
+Dockerfile example:
+INSTRUCTION ARGUMENT
+↓　　　　　↓
+FROM Ubuntu　　                                        ←start from a base OS or another image,every image must be based of another image.All dockerfile must start from "FROM" instruction
+RUN apt-get update && apt-get -y install python       ←install all dependencies
+RUN pip install flask flask-mysql                     ←install all dependencies
+COPY . /opt/source-code                               ←copy source code
+ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run←specify entrypoint(allows us to specify a command that will be run when the image is running as a container)
 
+layer 1. base ubuntu layer
+layer 2. changes in apt packages
+layer 3. changes in pip packages
+layer 4. sourcecode copy
+layer 5. entrypoint
+
+in case step 3 was failed, it will reuse the previous layers from cache and continue to build the remaining layers.
+If you were to add additional steps in dockerfile,docker will rebuild the changed layers only.
 
