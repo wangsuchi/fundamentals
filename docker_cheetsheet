@@ -56,8 +56,10 @@ FROM Ubuntu　　                                        ←start from a base OS
 RUN apt-get update && apt-get -y install python       ←install all dependencies
 RUN pip install flask flask-mysql                     ←install all dependencies
 COPY . /opt/source-code                               ←copy source code
-CMD ["command", "param1"](CMD ["sleep","5"])          ←hard code to make the system sleep 5 secs every time at startup
-ENTRYPOINT ["sleep"]                                  ←specify entrypoint(allows us to specify a command that will be run when the image is running as a container)
+CMD ["command", "param1"]
+(①CMD ["sleep","5"])                                 ←hard code to make the system sleep 5 secs every time at startup
+(②CMD ["5"]                                          ← default sleep 5 sec
+②ENTRYPOINT ["sleep"])                               ←specify entrypoint(allows us to specify a command that will be run when the image is running as a container)
 →docker run [image_name] 10 (override CMD layer, entrypoint executes→sleep 10 sec)
 
 layer 1. base ubuntu layer
