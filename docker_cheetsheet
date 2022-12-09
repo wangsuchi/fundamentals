@@ -14,19 +14,20 @@ Once the task is complete, the container exits. So a container only lives as lon
   (3)docker run [image_name:{version_number}]          docker run redis:4.0←tag appended (if not specified, will be the latest version)
   (4)docker run -it [image_name]                       -it instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive bash shell in the container. 
   (5)docker run --name [container_name] [image_name]   you can customize the container name by option --name
-  (6)docker pull [image_name]                          pull image only without running it
-  (7)docker ps                                         list all running containers and some basic information(containerID,image,status,names←containerNameRandomlyMadeUpByPC)
-  (8)docker ps -a                                      list all running as well as previously stopped or exited containers
-  (9)docker stop [containerID/name]
-  (10)docker rm [containerID/name]                      delete container for good
-  (11)docker images                                     list all images
-  (12)docker rmi [image_name]                          Must ensure that no containers are running off of that image before attempting to remove image.Must stop and
+  (6)docker run -e [environment_variable] [image_name] when run an image, set an environment variable as well
+  (7)docker pull [image_name]                          pull image only without running it
+  (8)docker ps                                         list all running containers and some basic information(containerID,image,status,names←containerNameRandomlyMadeUpByPC)
+  (9)docker ps -a                                      list all running as well as previously stopped or exited containers
+  (10)docker stop [containerID/name]
+  (11)docker rm [containerID/name]                      delete container for good
+  (12)docker images                                     list all images
+  (13)docker rmi [image_name]                          Must ensure that no containers are running off of that image before attempting to remove image.Must stop and
                                                        delete all dependent containers before deleting that image.
-  (13)docker rm $(docker ps -aq)                       remove all containers at once  
-  (14)docker exec [containerID/name] [linux_command]   execute command inside container, docker exec cla19d3a7ca7 cat /etc/hosts
-  (15)docker inspect [containerID]                     get the internal ip address of container
-  (16)docker build [dockerfile_path] -t [image_name]   build your own image by running dockerfile, option -t is to customize the image name
-  (17)docker push [image_name]                         push your image to docker hub.the image name here needs to be changed to [hubdocker_userpath/image_name] 
+  (14)docker rm $(docker ps -aq)                       remove all containers at once  
+  (15)docker exec [containerID/name] [linux_command]   execute command inside container, docker exec cla19d3a7ca7 cat /etc/hosts
+  (16)docker inspect [containerID]                     get the internal ip address of container
+  (17)docker build [dockerfile_path] -t [image_name]   build your own image by running dockerfile, option -t is to customize the image name
+  (18)docker push [image_name]                         push your image to docker hub.the image name here needs to be changed to [hubdocker_userpath/image_name] 
   
 6.Run - PORT mapping
 docker run -p 80:8080 kodekloud/webapp (map docker host port 80 with container port 8080)
