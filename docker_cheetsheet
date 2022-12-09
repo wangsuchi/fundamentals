@@ -90,7 +90,9 @@ able to communicate with each other using its name. no need to use link anymore
 docker compose- version 3
 has everything of version 2, with support for docker swarm
 
-
+10. Docker registry
+(1)private registry:
+https://docs.docker.com/registry/
 
 
 
