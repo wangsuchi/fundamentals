@@ -43,7 +43,7 @@ Once the task is complete, the container exits. So a container only lives as lon
 6.Run - PORT mapping
 docker run -p 80:8080 kodekloud/webapp (map docker host port 80 with container port 8080)
 One docker host port can map to only one single container port. 
-container has its own default internal ip address, you can access with this ip address inside the docker server.
+container has its own default internal ip address, you can access with this ip address inside the docker server.Not working in iMac
 
 Docker: Unable to access container's internal IP from host
 https://stackoverflow.com/questions/71155466/docker-unable-to-access-containers-internal-ip-from-host
