@@ -20,7 +20,7 @@ Once the task is complete, the container exits. So a container only lives as lon
   (5)docker run --name [container_name] [image_name]   you can customize the container name by option --name
   (6)docker run -e [environment_variable] [image_name] when run an image, set an environment variable as well
   
-  deprecated --link option: to link 2 containers together
+  deprecated --link option: link 2 containers together(docker version)
   (7)docker run -d --name=vote -p 5000:80              
   --link redis:redis voting-app                        to link container redis to the host that the voting app is looking for, which is also redis
   (this,in fact, creates an entry into /etc/hosts on the voting app container, adding a domain name with the internal IP of the redis container)
