@@ -94,6 +94,16 @@ has everything of version 2, with support for docker swarm
 (1)private registry:
 https://docs.docker.com/registry/
 
+11.Docker engine
+simply refrred to a host with Docker installed on it.
+
+When you install docker on a linux host, you're actually installing 3 different component: Docker CLI, REST API, Docker Deamon.
+Docker Deamon: is a background process that manages docker objects such as the images, containers, volummes and networks.
+API server: is the API interface that programs can use to talk to the demon and provide instructions.
+
+The Docker CLI does not necessarily be on the same host.It could be on another system like a laptop and can still work with a remote Docker engine.
+⇒(command) docker -H=remote-docker-engine-address:2375(port)
+
 
 
 
