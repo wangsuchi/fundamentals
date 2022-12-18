@@ -51,6 +51,7 @@ https://stackoverflow.com/questions/71155466/docker-unable-to-access-containers-
 7.Run- Volume mapping
 docker run -v /opt/datadir:/var/lib/mysql mysql(docker_host_path:container_path )
 when docker container runs, it will implicitly mount the external directory to a folder inside the docker container.In this way, your data is still there even if the container is deleted.
+→docker run \ --mount type=bind(dir),source=/opt/datadir,target=/var/lib/mysql mysql
 
 8. Create my own image
 Docker can build images automatically by reading the instructions from a Dockerfile. 
@@ -122,7 +123,11 @@ This is where namespace coming into play.With processID namespace.Each process c
 docker run --cups=5 ubuntu(less than 50% of the CPU of the underlying host)
 docker run --memory=100m ubuntu
 
+15. Docker file system
+when you install docker on a host, it creates folder structure: /var/lib/docker
 
+layered architecture:
+container layers(read&write) are based on its dependent image layers(once the build is complete,it becomes read-only)
 
 
 
