@@ -99,7 +99,9 @@ simply refrred to a host with Docker installed on it.
 
 When you install docker on a linux host, you're actually installing 3 different component: Docker CLI, REST API, Docker Deamon.
 Docker Deamon: is a background process that manages docker objects such as the images, containers, volummes and networks.
-API server: is the API interface that programs can use to talk to the demon and provide instructions.
+API server: is the API interface that programs can use to talk to the deamon and provide instructions.
+CLI: command line interface, that we've been using until now to perform actions such as running a container etc.It uses the rest API to 
+interact with the docker deamon.
 
 The Docker CLI does not necessarily be on the same host.It could be on another system like a laptop and can still work with a remote Docker engine.
 ⇒(command) docker -H=remote-docker-engine-address:2375(port)
