@@ -35,11 +35,13 @@ Once the task is complete, the container exits. So a container only lives as lon
                                                        delete all dependent containers before deleting that image.
   (15)docker rm $(docker ps -aq)                       remove all containers at once  
   (16)docker exec [containerID/name] [linux_command]   execute command inside container, docker exec cla19d3a7ca7 cat /etc/hosts
-  (17)docker inspect [containerID]                     get information, like the internal ip address of container,the environment variable
+  (17)docker inspect [containerID]                     get information, like the internal ip address of container,the environment variable, network settings
   (18)docker build [dockerfile_path] -t [image_name]   build your own image by running dockerfile, option -t is to customize the image name
   (19)docker push [image_name]                         push your image to docker hub.the image name here needs to be changed to [hubdocker_userpath/image_name] 
   (20)docker-compose up                                run compose file
   (21)ps -eaf                                          list all the processes running
+  (22)docker network ls                                list all network
+  (23)docker run -itd --network=multi-host-network busybox
 6.Run - PORT mapping
 docker run -p 80:8080 kodekloud/webapp (map docker host port 80 with container port 8080)
 One docker host port can map to only one single container port. 
@@ -128,6 +130,13 @@ when you install docker on a host, it creates folder structure: /var/lib/docker
 
 layered architecture:
 container layers(read&write) are based on its dependent image layers(once the build is complete,it becomes read-only)
+
+16.default: bridge
+user-defined network:
+docker network create\
+   --driver bridge \
+   --subnet 182.18.0.0/16
+   custom-isolated-network
 
 
 
