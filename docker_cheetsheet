@@ -39,7 +39,7 @@ Once the task is complete, the container exits. So a container only lives as lon
   (18)docker build [dockerfile_path] -t [image_name]   build your own image by running dockerfile, option -t is to customize the image name
   (19)docker push [image_name]                         push your image to docker hub.the image name here needs to be changed to [hubdocker_userpath/image_name] 
   (20)docker-compose up                                run compose file
-  
+  (21)ps -eaf                                          list all the processes running
 6.Run - PORT mapping
 docker run -p 80:8080 kodekloud/webapp (map docker host port 80 with container port 8080)
 One docker host port can map to only one single container port. 
@@ -106,6 +106,21 @@ interact with the docker deamon.
 The Docker CLI does not necessarily be on the same host.It could be on another system like a laptop and can still work with a remote Docker engine.
 ⇒(command) docker -H=remote-docker-engine-address:2375(port)
 
+12.Docker containerization
+Docker uses namespace to isolate workspace.ProcessID,network,interprocess communication,Unix timesharing system, mounts are created in their own namespace.
+
+-Linux fundamental knowledge:
+Whenever a linux system boots up, it starts with just one process with PID:1.This is the root process and kicks off all the other processes in the system.
+processID is unique, and 2 processes can't have the same processID.
+
+13.Docker namespace:
+We know that container is a child system running on the host, which is an independent system on its own and it has its own set of processID.But we know that 
+there's no hard isolation between the containers and underlying host.So the processes running inside containers are infact processes running on the underlying host.
+This is where namespace coming into play.With processID namespace.Each process can have multiple processID associated with it.
+
+14.way to restrict the amount of CPU or memory a container can use
+docker run --cups=5 ubuntu(less than 50% of the CPU of the underlying host)
+docker run --memory=100m ubuntu
 
 
 
