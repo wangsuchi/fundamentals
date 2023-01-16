@@ -51,3 +51,19 @@ it then update ETCD cluster.The scheduler notices that there's a new pod with no
 communicates that back to kube-apiserver.The kube-apiserver then updates the information into etcd. The kube-apiserver then passes that information to the
 kubelet in that appropiate worker node.The kubelet then creates the pod and instructs the container runtime engine to deploy the app image.Once done, kubelet
 updates the status back to the API server, who will then updates the data back into etcd.
+
+3.Kube Controller Manager-----node controller,replication controller,
+A controller is a process that continuously monitors the state of various components within the system 
+process name: kube-controller-manager
+
+4.scheduler
+IS only responsible for deciding which pod goes on which node
+
+5.kubelet
+captain of the worker node
+
+6.kube proxy
+Is a process that runs on each working node in k8s cluster.Its job is to look for new services.Everytime a new service is created, it creates the appropiate
+rules on each node to forward traffic to those services to the backend pods.Like, iptable rule
+
+
