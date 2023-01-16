@@ -1,6 +1,9 @@
 kubernetes is one of the highest trending technology in cloud computing.
 kubernetes has the fastest growth in job searching.Demand for engineers with knowledge on kubernetes is on rise
 
+need everything to be container compatible.
+⇒So we need Docker, or other equivalent container runtime engine installed on all the nodes in the cluster, 
+including the master nodes, if you wish to host the controlling components as containers.
 
 Use the code - DEVOPS15 - while registering for the CKA or CKAD exams at Linux Foundation to get a 15% discount.
 
@@ -18,11 +21,11 @@ etcdctl cluster-health
 etcdctl mk
 etcdctl mkdir
 etcdctl set
+etcdctl get
 
 Whereas the commands are different in version 3
 etcdctl snapshot save 
 etcdctl endpoint health
-etcdctl get
 etcdctl put
 
 To set the right version of API set the environment variable ETCDCTL_API command
@@ -36,3 +39,15 @@ The certificate files are available in the etcd-master at the following path.
 --cacert /etc/kubernetes/pki/etcd/ca.crt     
 --cert /etc/kubernetes/pki/etcd/server.crt     
 --key /etc/kubernetes/pki/etcd/server.key
+
+2.Kube-API Server
+Running kubectl command is in fact reaching to the kube-api server.
+The kube-api server first authenticates the request and then validates it. It then retrieves data from etcd cluster and responds back.
+Another way is to invoke APIs directly by sending a POST request. 
+
+WHAT happened when you send a pod creating request to kube-api server?
+When you ask apiserver to create a pod without signing it to a node, after finishing 3 steps above(authenicate use, validate request,retrieve data), 
+it then update ETCD cluster.The scheduler notices that there's a new pod with no node assigned, so it identifies the right node to place the pod on and
+communicates that back to kube-apiserver.The kube-apiserver then updates the information into etcd. The kube-apiserver then passes that information to the
+kubelet in that appropiate worker node.The kubelet then creates the pod and instructs the container runtime engine to deploy the app image.Once done, kubelet
+updates the status back to the API server, who will then updates the data back into etcd.
