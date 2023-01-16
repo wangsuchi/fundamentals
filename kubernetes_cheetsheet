@@ -55,7 +55,7 @@ updates the status back to the API server, who will then updates the data back i
 kubectl command
 kubectl run nginx --image nginx   deploy a docker container of image nginx by creating a pod
 kubectl get pods                  list of pods
-
+kubectl describe pod [podName]    get details of a pod
 
 3.Kube Controller Manager-----node controller,replication controller,
 A controller is a process that continuously monitors the state of various components within the system 
@@ -76,4 +76,21 @@ With k8s, our ultimate aim is to deploy app in the form of containers on a set o
 However,k8s does not deploy containers directly on the worker nodes.The containers are encapsulated into a k8s object known as pod.
 A pod is a single instance of an app, which is the smallest object that one can created in k8s.
 
+8.yaml file
+contains 4 sections:apiVersion,kind,metadata, spec
+
+Key Value Pair                                   Array/List                                                   Dictionary/Map
+Fruit: Apple                                     Fruits:                                                      Banana:
+Vegetable: Carrot                                -  Orange                                                        Calories: 105
+Meat: Chicken                                    -  Apple                                                         Fat: 0.4 g
+Liquid: Water                                                                                                 
+                                                 Vegetables:                                                  Grapes:
+                                                 -  Carrot                                                        Calories: 62
+                                                 -  Tomato                                                        Fat: 0.3 g
+                                                 
+You must have equal number of blank spaces before item of the same level(sibilings)  
+Those items which have extra spaces than the item above, are showing parent and children belonging relationship
+
+Dictionary is used to store properties, unordered collection, whereas lists are ordered collection
+You can always combine these 3 type together,like list of dictionary
 
