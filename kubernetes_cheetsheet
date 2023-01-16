@@ -82,11 +82,12 @@ It helps us run multiple instances of a single pod in k8s cluster, thus providin
 Even if you have a single pod, the replication controller can automatically bring up a new pod when the existing one fails.
 Another thing it can do is to share the load between pods, load balancing
 
-What's replica set? (new and recommended)
-
-
-
-
+What's replica set?　Almost the same as replication controller (new and recommended)
+Replica Set can also manage pods that were not created as part of the Replica Set creation.
+The selector is one of the major differences between Replication Controller and Replica Set.
+The selector is not a required field in case of a Replication Controller but it is still available.
+When you skip it as we did in the previous slide, it assumes it to be the same as the labels provided in the pod definition file.
+In case of Replica Set, a user input is required for this property and it has to be written in the form of matched labels
 
 9.yaml file
 contains 4 sections:apiVersion,kind,metadata, spec
