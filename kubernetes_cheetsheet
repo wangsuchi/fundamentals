@@ -128,3 +128,5 @@ the same configuration across multiple namespaces such as Development, Staging a
 way to change ur default namespace?
 kubectl config set-context $(kubectl config current-context) --namespace=dev
 
+A resource quota, defined by a ResourceQuota object, provides constraints that limit aggregate resource consumption per namespace. It can limit the quantity of objects that can
+be created in a namespace by type, as well as the total amount of compute resources that may be consumed by resources in that namespace.
