@@ -53,13 +53,21 @@ kubelet in that appropiate worker node.The kubelet then creates the pod and inst
 updates the status back to the API server, who will then updates the data back into etcd.
 
 kubectl command
-kubectl run nginx --image nginx   deploy a docker container of image nginx by creating a pod
-kubectl get pods                  list of pods
-kubectl describe pod [podName]    get details of a pod
-kubectl create/apply [filename.yaml] deploy pod by executing yaml file
-kubectl apply command             Update the pod-definition file
-kubectl edit replicaset           edit replicaset yaml file(change replicas permanently)
-kubectl scale --replicas=3 rs/foo   Scale a replicaset named 'foo' to 3
+kubectl run nginx --image nginx                           Create an NGINX Pod
+kubectl run nginx --image=nginx --dry-run=client -o yaml  Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)
+kubectl get pods                                          list of pods
+kubectl describe pod [podName]                            get details of a pod
+kubectl create/apply [filename.yaml]                      deploy pod by executing yaml file
+kubectl apply command                                     Update the pod-definition file
+kubectl edit replicaset                                   edit replicaset yaml file(change replicas permanently)
+kubectl scale --replicas=3 rs/foo                         Scale a replicaset named 'foo' to 3
+kubectl create deployment --image=nginx nginx             Create a deployment
+kubectl create deployment --image=nginx nginx --dry-run=client -o yaml                                     Generate Deployment YAML file (-o yaml). Don't create it(--dry-run)
+kubectl create -f nginx-deployment.yaml                   Save it to a file, make necessary changes to the file (for example, adding more replicas) and then create the deployment.
+OR
+kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml    In k8s version 1.19+, we can specify the --replicas option to create a deployment with 4 replicas.
+
+
 
 3.Kube Controller Manager-----node controller,replication controller,
 A controller is a process that continuously monitors the state of various components within the system 
