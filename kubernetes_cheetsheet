@@ -100,6 +100,18 @@ The selector is not a required field in case of a Replication Controller but it 
 When you skip it as we did in the previous slide, it assumes it to be the same as the labels provided in the pod definition file.
 In case of Replica Set, a user input is required for this property and it has to be written in the form of matched labels
 
-9.
+9.service
+type(1)NodePort
+Mapping the port of the node to the port of the pod.
+listen to a port and forward request to the Pods.
+type(2)ClusterIP
+the service creates a virtual IP inside the cluster to enable communication between different services,
+such as a set of frontend servers to a set of backend servers.
+type(3)loadBalancer
 
+when the Pods are distributed across multiple nodes, we have the web application on Pods
+on separate nodes in the cluster.When we create a service,
+without us having to do any additional configuration,Kubernetes automatically creates a service that spans
+across all the nodes in the cluster and maps the target port to the same node port on all the nodes in the cluster.
+This way you can access your application using the IP of any node in the cluster and using the same port number
 10.
