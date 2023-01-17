@@ -53,15 +53,18 @@ kubelet in that appropiate worker node.The kubelet then creates the pod and inst
 updates the status back to the API server, who will then updates the data back into etcd.
 
 kubectl command
-kubectl run nginx --image nginx                           Create an NGINX Pod
+kubectl run nginx --image=nginx                           Create an NGINX Pod
 kubectl run nginx --image=nginx --dry-run=client -o yaml  Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)
 kubectl get pods                                          list of pods
 kubectl describe pod [podName]                            get details of a pod
 kubectl create/apply [filename.yaml]                      deploy pod by executing yaml file
 kubectl apply command                                     Update the pod-definition file
-kubectl edit replicaset                                   edit replicaset yaml file(change replicas permanently)
+kubectl edit replicaset/development  [rs/dev_name]        edit replicaset yaml file(change replicas permanently)
 kubectl scale --replicas=3 rs/foo                         Scale a replicaset named 'foo' to 3
+OR
+kubectl scale --replicas=3  replicaset  [rs_name] 
 kubectl create deployment --image=nginx nginx             Create a deployment
+kubectl expose deployment nginx --port 80
 kubectl create deployment --image=nginx nginx --dry-run=client -o yaml                                     Generate Deployment YAML file (-o yaml). Don't create it(--dry-run)
 kubectl create -f nginx-deployment.yaml                   Save it to a file, make necessary changes to the file (for example, adding more replicas) and then create the deployment.
 OR
