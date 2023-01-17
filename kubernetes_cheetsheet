@@ -124,3 +124,7 @@ and not for cluster-wide objects (e.g. StorageClass, Nodes, PersistentVolumes, e
 When you create a Service, it creates a corresponding DNS entry. This entry is of the form <service-name>.<namespace-name>.svc.cluster.local, 
 which means that if a container only uses <service-name>, it will resolve to the service which is local to a namespace. This is useful for using 
 the same configuration across multiple namespaces such as Development, Staging and Production. 
+
+way to change ur default namespace?
+kubectl config set-context $(kubectl config current-context) --namespace=dev
+
