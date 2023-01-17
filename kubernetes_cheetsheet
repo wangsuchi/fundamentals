@@ -100,22 +100,6 @@ The selector is not a required field in case of a Replication Controller but it 
 When you skip it as we did in the previous slide, it assumes it to be the same as the labels provided in the pod definition file.
 In case of Replica Set, a user input is required for this property and it has to be written in the form of matched labels
 
-9.yaml file
-contains 4 sections:apiVersion,kind,metadata, spec
-
-Key Value Pair                                   Array/List                                                   Dictionary/Map
-Fruit: Apple                                     Fruits:                                                      Banana:
-Vegetable: Carrot                                -  Orange                                                        Calories: 105
-Meat: Chicken                                    -  Apple                                                         Fat: 0.4 g
-Liquid: Water                                                                                                 
-                                                 Vegetables:                                                  Grapes:
-                                                 -  Carrot                                                        Calories: 62
-                                                 -  Tomato                                                        Fat: 0.3 g
-                                                 
-You must have equal number of blank spaces before item of the same level(sibilings)  
-Those items which have extra spaces than the item above, are showing parent and children belonging relationship
-
-Dictionary is used to store properties, unordered collection, whereas lists are ordered collection
-You can always combine these 3 type together,like list of dictionary
+9.
 
 10.
