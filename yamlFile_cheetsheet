@@ -1,0 +1,17 @@
+yaml file
+contains 4 sections:apiVersion,kind,metadata, spec
+
+Key Value Pair                                   Array/List                                                   Dictionary/Map
+Fruit: Apple                                     Fruits:                                                      Banana:
+Vegetable: Carrot                                -  Orange                                                        Calories: 105
+Meat: Chicken                                    -  Apple                                                         Fat: 0.4 g
+Liquid: Water                                                                                                 
+                                                 Vegetables:                                                  Grapes:
+                                                 -  Carrot                                                        Calories: 62
+                                                 -  Tomato                                                        Fat: 0.3 g
+                                                 
+You must have equal number of blank spaces before item of the same level(sibilings)  
+Those items which have extra spaces than the item above, are showing parent and children belonging relationship
+
+Dictionary is used to store properties, unordered collection, whereas lists are ordered collection
+You can always combine these 3 type together,like list of dictionary
