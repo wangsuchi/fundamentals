@@ -108,6 +108,7 @@ type(2)ClusterIP
 the service creates a virtual IP inside the cluster to enable communication between different services,
 such as a set of frontend servers to a set of backend servers.
 type(3)loadBalancer
+Exposes the Service externally using a cloud provider's load balancer
 
 when the Pods are distributed across multiple nodes, we have the web application on Pods
 on separate nodes in the cluster.When we create a service,
