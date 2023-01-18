@@ -94,13 +94,16 @@ kubectl describe node kubemaster | grep Taint
 ⇒taint(on node) (kubectl taint)& tolerations(on pod) (yaml)
 node-target 
 it tells specific node to only accepts certain pod with proper tolerations
+However, taints and tolerations does not guarantee that the pods will only prefer these nodes.
 
 ⇒node selector(yaml:nodeSelector)
 pod-target
 you have to add label on node first by kubectl label,then edit yaml
 
 ⇒node affinity
+Can't prevent other pods goes on the nodes.
 
+Combination of taints & tolerations and node affinity can be used to completely dedicate nodes for specific pods
 
 5.kubelet
 captain of the worker node
