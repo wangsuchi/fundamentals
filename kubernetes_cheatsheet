@@ -6,7 +6,7 @@ need everything to be container compatible.
 including the master nodes, if you wish to host the controlling components as containers.
 
 Use the code - DEVOPS15 - while registering for the CKA or CKAD exams at Linux Foundation to get a 15% discount.
-
+Kubectl Reference Docs    search for imperative commands
 
 1. ETCD
 (1)what is ETCD?
