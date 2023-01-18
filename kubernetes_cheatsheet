@@ -82,6 +82,21 @@ process name: kube-controller-manager
 4.scheduler
 IS only responsible for deciding which pod goes on which node
 
+how to check whether you have scheduler or not?
+kubectl get pods -n kube-system
+
+To see the pod on which node
+kubectl get pods -o wide
+
+To check the taint of master node
+kubectl describe node kubemaster | grep Taint
+
+taint(on node) & tolerations(on pod) 
+it tells specific node to only accepts certain pod with proper tolerations
+
+
+
+
 5.kubelet
 captain of the worker node
 
