@@ -91,10 +91,15 @@ kubectl get pods -o wide
 To check the taint of master node
 kubectl describe node kubemaster | grep Taint
 
-taint(on node) & tolerations(on pod) 
+⇒taint(on node) (kubectl taint)& tolerations(on pod) (yaml)
+node-target 
 it tells specific node to only accepts certain pod with proper tolerations
 
+⇒node selector(yaml:nodeSelector)
+pod-target
+you have to add label on node first by kubectl label,then edit yaml
 
+⇒node affinity
 
 
 5.kubelet
