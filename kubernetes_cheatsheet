@@ -188,7 +188,10 @@ kubelet.service file
 
 The kubelet automatically tries to create a mirror Pod on the Kubernetes API server for each static Pod.
 
-What is the path of the directory holding the static pod definition files?
+(1)What is the path of the directory holding the static pod definition files?
 Run the command ps -aux | grep kubelet 
 and identify the config file - --config=/var/lib/kubelet/config.yaml. 
 Then check in the config file for staticPodPath.
+
+(2)delete static pod?
+Identify which node the static pod is created on, ssh to the node(ssh nodename) and delete the pod definition file.
