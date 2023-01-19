@@ -183,9 +183,6 @@ control plane (for example, a Deployment); instead, the kubelet watches each sta
 
 Static Pods are always bound to one Kubelet on a specific node.
 
-Configure your kubelet on the node to use this directory by running it with --pod-manifest-path=/etc/kubernetes/manifests/ argument.
-kubelet.service file
-
 The kubelet automatically tries to create a mirror Pod on the Kubernetes API server for each static Pod.
 
 (1)What is the path of the directory holding the static pod definition files?
