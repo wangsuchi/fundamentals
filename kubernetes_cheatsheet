@@ -180,10 +180,8 @@ Deleting a DaemonSet will clean up the Pods it created.
 12.static pods
 Static Pods are managed directly by the kubelet daemon on a specific node, without the API server observing them. Unlike Pods that are managed by the 
 control plane (for example, a Deployment); instead, the kubelet watches each static Pod (and restarts it if it fails).
-
 Static Pods are always bound to one Kubelet on a specific node.
-
-The kubelet automatically tries to create a mirror Pod on the Kubernetes API server for each static Pod.
+The kubelet automatically tries to create a mirror Pod on the Kubernetes API server for each static Pod.So you can see the pod in kubectl get pods 
 
 (1)What is the path of the directory holding the static pod definition files?
 Run the command ps -aux | grep kubelet 
@@ -192,3 +190,8 @@ Then check in the config file for staticPodPath.
 
 (2)delete static pod?
 Identify which node the static pod is created on, ssh to the node(ssh nodename) and delete the pod definition file.
+
+(3)way to create static pod
+place file.yaml under the staticPodPath
+
+
