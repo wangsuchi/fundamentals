@@ -105,6 +105,9 @@ Can't prevent other pods goes on the nodes.
 
 Combination of taints & tolerations and node affinity can be used to completely dedicate nodes for specific pods
 
+multiple schedulers--how to customize which scheduler the pod will use
+add schedulerName under spec column in pod yaml file
+
 5.kubelet
 captain of the worker node
 
