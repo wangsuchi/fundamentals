@@ -68,10 +68,10 @@ kubectl expose deployment nginx --port 80
 kubectl create deployment --image=nginx nginx --dry-run=client -o yaml                                     Generate Deployment YAML file (-o yaml). Don't create it(--dry-run)
 kubectl create -f nginx-deployment.yaml                   Save it to a file, make necessary changes to the file (for example, adding more replicas) and then create the deployment.
 OR
-kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml    In k8s version 1.19+, we can specify the --replicas option to create a deployment with 4 replicas.
+kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx.yaml    specify the --replicas option to create a deployment with 4 replicas.
 
 --dry-run: By default as soon as the command is run, the resource will be created. 
-If you simply want to test your command , use the --dry-run=client option. This will not create the resource, instead, tell you whether the resource can be created and if your command is right.
+If you simply want to test your command , use --dry-run=client option. This will not create the resource, instead, tell you whether the resource can be created and if your command is right.
 
 -o yaml: This will output the resource definition in YAML format on screen.
 
@@ -171,3 +171,12 @@ kubectl config set-context $(kubectl config current-context) --namespace=dev
 
 A resource quota, defined by a ResourceQuota object, provides constraints that limit aggregate resource consumption per namespace. It can limit the quantity of objects that can
 be created in a namespace by type, as well as the total amount of compute resources that may be consumed by resources in that namespace.
+
+11.daemon set
+A DaemonSet ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, 
+Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. 
+Deleting a DaemonSet will clean up the Pods it created.
+
+
+
+
