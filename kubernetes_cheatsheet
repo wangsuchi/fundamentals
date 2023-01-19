@@ -199,4 +199,4 @@ place file.yaml under the staticPodPath
 
 13.logging
 (1)need to plug in metrics service,then use kubectl command: kubectl top pod/ kubectl top node to see CPU/memory/disk consumption
-(2)application logs: kubectl logs -f podname containername
+(2)application logs: kubectl logs -f podname containername(if the pod only has one container, then you don't need to specify containername)
