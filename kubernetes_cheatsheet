@@ -212,7 +212,8 @@ In the future, when the app is upgraded,a new rollout is triggered and a new dep
 This helps us keep track of the changes, enable us to roll back to previous revision if necessary.
 see status of rollout:  kubectl rollout status deployment/[deploymentname]
 see history of rollout:  kubectl rollout history deployment/[deploymentname]
-(2)rolling update(default deployment strategy)
+(2)strategyType: recreate vs rolling update(default deployment strategy)
+rolling update:
 take down the older version and bring up a newer version one by one.This way the app never goes down, and the upgrade is seamless
 (3)rollback
 kubectl rollout undo deployment/[deploymentname]
