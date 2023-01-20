@@ -204,3 +204,34 @@ place file.yaml under the staticPodPath
 13.logging
 (1)need to plug in metrics service,then use kubectl command: kubectl top pod/ kubectl top node to see CPU/memory/disk consumption
 (2)application logs: kubectl logs -f podname containername(if the pod only has one container, then you don't need to specify containername)
+
+14. Rollout, versioning, Rolling updates, rollback
+(1)rollout
+When you first create a deployment, it triggers a rollout.A new rollout creates a new deployment revision, revison1.
+In the future, when the app is upgraded,a new rollout is triggered and a new deployment revison is created, revision2.
+This helps us keep track of the changes, enable us to roll back to previous revision if necessary.
+see status of rollout:  kubectl rollout status deployment/[deploymentname]
+see history of rollout:  kubectl rollout history deployment/[deploymentname]
+(2)rolling update(default deployment strategy)
+take down the older version and bring up a newer version one by one.This way the app never goes down, and the upgrade is seamless
+(3)rollback
+kubectl rollout undo deployment/[deploymentname]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
