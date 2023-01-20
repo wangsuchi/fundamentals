@@ -135,7 +135,7 @@ spec:
     command:
       - "sleep"
       - "5000"
-
+init container is run one at a time in sequential order
 8.Replication Controller(deprecated)
 It helps us run multiple instances of a single pod in k8s cluster, thus providing high availability.
 Even if you have a single pod, the replication controller can automatically bring up a new pod when the existing one fails.
