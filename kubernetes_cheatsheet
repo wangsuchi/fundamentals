@@ -228,12 +228,14 @@ take down the older version and bring up a newer version one by one.This way the
 (3)rollback
 kubectl rollout undo deployment/[deploymentname]
 
+15. configmaps
+A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, 
+command-line arguments, or as configuration files in a volume
+step1: create configmap (imperative:kubectl create configmap/declarative:configfile,then kubectl create -f config-map.file)
+step2: inject configuration data into the pod under yaml file(envFrom: configMapRef)
 
-
-
-
-
-
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-configmap-em-
+https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
 
 
 
