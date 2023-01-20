@@ -237,6 +237,8 @@ step2: inject configuration data into the pod under yaml file(envFrom: configMap
 https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-configmap-em-
 https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
 
+16. secret very like configmap
+(envFrom: configMapRef)⇒(envFrom: secretRef)
 
 
 
