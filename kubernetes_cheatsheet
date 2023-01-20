@@ -70,6 +70,8 @@ kubectl create -f nginx-deployment.yaml                   Save it to a file, mak
 OR
 kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx.yaml    specify the --replicas option to create a deployment with 4 replicas.
 
+kubectl exec -it app -- cat /log/app.log  go into the app(podname), and run cat /log/app.log command in terminal
+
 --dry-run: By default as soon as the command is run, the resource will be created. 
 If you simply want to test your command , use --dry-run=client option. This will not create the resource, instead, tell you whether the resource can be created and if your command is right.
 
@@ -239,6 +241,7 @@ https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap
 
 16. secret very like configmap
 (envFrom: configMapRef)⇒(envFrom: secretRef)
+imperative: kubectl create secret secretname --from-literal=key=value
 
 
 
