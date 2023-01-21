@@ -207,6 +207,7 @@ Run the command ps -aux | grep kubelet
 and identify the config file - --config=/var/lib/kubelet/config.yaml. 
 Then check in the config file for staticPodPath.
 
+etcd,kube-apiserver,scheduler path: /etc/kubernetes/manifests
 (2)delete static pod?
 Identify which node the static pod is created on, ssh to the node(ssh nodename) and delete the pod definition file.
 
