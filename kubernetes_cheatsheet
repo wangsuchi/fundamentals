@@ -255,7 +255,7 @@ kubectl uncordon node-1(make node-1 schedule-able again)
 relate command:
 kubectl cordon node-1(make node-1 unschedule-able,doesn't move pods on it)
 
-
+pod scheduled on node01 which is not part of a replicaset.The drain command will not work in this case. 
 
 
 
