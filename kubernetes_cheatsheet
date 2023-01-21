@@ -248,9 +248,9 @@ Whenever a node goes offline, the master node waits for up to five minutes befor
 The time it waits for a pod to come back online is known as the pod-eviction-timeout,and is set on the controller manager
 with a default value of five minutes.
 
-graceful way to upgrade os on node:
+graceful way to take down node:
 kubectl drain node-1(pods on it will be terminated, and deployed on other node instead.No pods will be scheduled on this drained node during this time)
-kubectl uncordon node-1(make node-1 schedule-able again)
+kubectl uncordon node-1(make node-1 schedule-able again for only new created pods)
 
 relate command:
 kubectl cordon node-1(make node-1 unschedule-able,doesn't move pods on it)
