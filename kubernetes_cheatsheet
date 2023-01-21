@@ -243,7 +243,7 @@ https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap
 (envFrom: configMapRef)⇒(envFrom: secretRef)
 imperative: kubectl create secret secretname --from-literal=key=value
 
-17.
+17. take down node for os upgrade
 Whenever a node goes offline, the master node waits for up to five minutes before considering the node dead.
 The time it waits for a pod to come back online is known as the pod-eviction-timeout,and is set on the controller manager
 with a default value of five minutes.
@@ -255,7 +255,19 @@ kubectl uncordon node-1(make node-1 schedule-able again for only new created pod
 relate command:
 kubectl cordon node-1(make node-1 unschedule-able,doesn't move pods on it)
 
+18 cluster upgrade process
+kube-apiserver's version is the highest,say X
+then controller-manager,kube-scheduler: X-1, 
+kubelet:X-2,kube-proxy:X-2
+kubectl: X+1 ~ X-1
 
+kubeadm upgrade plan
+kubeadm upgrade apply
+
+apt-get upgrade -y kubeadm=versionnum
+apt-get upgrade -y kubelet=versionnum
+kubeadm upgrade node config --kubelet-version versionnum
+systemctl restart kubelet
 
 
 
