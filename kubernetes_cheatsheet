@@ -263,7 +263,7 @@ then controller-manager,kube-scheduler: X-1,
 kubelet:X-2,kube-proxy:X-2
 kubectl: X+1 ~ X-1
 
-kubeadm upgrade plan
+kubeadm upgrade plan (What is the latest version available for an upgrade with the current version of the kubeadm tool installed?)
 kubeadm upgrade apply
 
 apt-get upgrade -y kubeadm=versionnum
