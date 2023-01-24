@@ -255,6 +255,7 @@ kubectl uncordon node-1(make node-1 schedule-able again for only new created pod
 
 relate command:
 kubectl cordon node-1(make node-1 unschedule-able,doesn't move pods on it)
+cat /etc/os-release (to check os,ubuntu or centos)
 
 18 cluster upgrade process
 kube-apiserver's version is the highest,say X
