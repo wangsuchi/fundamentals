@@ -12,9 +12,13 @@ Here comes the certificate.
 we use the public key of CA to decrypt the certificate, to retrieve the server's public key.
 CA uses their private keys to sign the certificates. the public keys are already built in your browser
 
-
+extensions:
 certificate(public key)
 *.crt *.pem
 
 private key
 *.key *-key.pem
+
+
+types:
+root certificate, server certificate, client certificate
