@@ -291,8 +291,8 @@ then decode certificate part to plain format by: echo "..." | base64 ---decode
 to create csr.yaml
 need to encode .csr into base 64 by command: cat akshay.csr | base64 -w 0(-w 0 is to print in single line)
  
- 
- 
+ to view kubectl config
+ kubectl config view (--kubeconfig=my-custom-config)
  
  
  
