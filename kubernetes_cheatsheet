@@ -296,8 +296,8 @@ need to encode .csr into base 64 by command: cat akshay.csr | base64 -w 0(-w 0 i
  
  To know the current context, run the command: kubectl config --kubeconfig=/root/my-kube-config current-context
  
- 
- 
+ to change default kubeconfig file
+ move target file to /root/.kube/config
  
 
 
