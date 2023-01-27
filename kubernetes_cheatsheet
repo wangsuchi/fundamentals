@@ -294,7 +294,7 @@ need to encode .csr into base 64 by command: cat akshay.csr | base64 -w 0(-w 0 i
  to view kubectl config
  kubectl config view (--kubeconfig=my-custom-config)
  
- 
+ To know the current context, run the command: kubectl config --kubeconfig=/root/my-kube-config current-context
  
  
  
