@@ -271,5 +271,20 @@ apt-get upgrade -y kubelet=versionnum
 kubeadm upgrade node config --kubelet-version versionnum
 systemctl restart kubelet
 
+19.security
+19-1 authentication
+methods: static password file,static token file,certificates,identity services
+(1)static password file: user-details.csv to store password, username,userID, then pass the file name as an option --basic-auth-file=user-details.csv,
+curl -v -k https://master-node-ip:6443/api/v1/pods -u "user1:password123"
+(2)static token file: user-token-details.csv to store token,username,userID, then pass the file name as an option --token-auth-file=user-details.csv,
+curl -v -k https://master-node-ip:6443/api/v1/pods --header "Authentication: Bearer kpjCVbI7rCFAHYPkBzRb7gu1cUc4B"
+
+
+
+
+
+
+
+
 
 
