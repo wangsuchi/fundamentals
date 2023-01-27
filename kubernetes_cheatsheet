@@ -280,10 +280,25 @@ kubeadm environment:
 where to look for the certificates:
 cat /etc/kubernetes/manifests/kube-apiserver.yaml
 
+manage cert with kubectl command in control manager:
+kubectl get csr
+kubectl certificate approve csr_name
 
+to view the certificate:
+kubectl get csr csr_name -o yaml
+then decode certificate part to plain format by: echo "..." | base64 ---decode
 
-
-
+to create csr.yaml
+need to encode .csr into base 64 by command: cat akshay.csr | base64 -w 0(-w 0 is to print in single line)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
