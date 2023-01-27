@@ -4,7 +4,6 @@ SSL TLS certificates
 
 PKI(public key infrastructure)
 when user first accesses the server with https, the user get the server's public key my.pem,
-(created by command openssl genrsa -out my.key 1024, openssl rsa -in my.key -pubout > my.pem)
 the user then encrypt the symmetric key using my.pem, and then send it to the server, the server uses my.key to decrypt the message to get the symmetric key.
 
 How to prove the public key my.pem you received is legitimate?
@@ -13,12 +12,28 @@ we use the public key of CA to decrypt the certificate, to retrieve the server's
 CA uses their private keys to sign the certificates. the public keys are already built in your browser
 
 extensions:
-certificate(public key)
+(1)certificate(public key)
 *.crt *.pem
-
-private key
+(2)private key
 *.key *-key.pem
-
 
 types:
 root certificate, server certificate, client certificate
+
+commands to create asymmetric keys
+openssl genrsa -out my.key 1024
+openssl rsa -in my.key -pubout > my.pem
+
+CA root certificate creation:
+openssl genrsa -out ca.key 2048                                        generate private key
+openssl req -new -key ca.key -subj "/CN=KUBERNETES-CA" -out ca.csr     certificate signing request
+openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt               sign certificate
+
+client certificate creation:
+openssl genrsa -out admin.key 2048                                                       generate private key  
+openssl req -new -key admin.key -subj "/CN=kube-admin/O=system:masters" -out admin.csr   certificate signing request
+openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -out admin.crt                  sign certificate
+
+
+
+
