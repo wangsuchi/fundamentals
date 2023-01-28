@@ -299,6 +299,16 @@ need to encode .csr into base 64 by command: cat akshay.csr | base64 -w 0(-w 0 i
  to change default kubeconfig file
  move target file to /root/.kube/config
  
+to change current context:
+kubectl config use-context prod-user@production
 
+(2)authorization
+authorization mode: node authorizer,attribute-based,role-based,webhook,alwaysAllow,alwaysDeny 
 
+RBAC(role-based authorization controll)
+create a role using yaml file
+for binding the role to a user, create another yaml file(rolebinding)
+kubectl get roles/rolebindings,kubectl describe role rolename
 
+as a user, how to check if i have the permission:
+kubectl auth can-i create/delete deployments/nodes --as dev-user
