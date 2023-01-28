@@ -1,4 +1,4 @@
 things you need to remember:
 path:
-/etc/kubernetes/manifests/ (kubeadm, cert)
+/etc/kubernetes/manifests/ (kubeadm, cert,kube-apiserver.yaml)
 $HOME/.kube/config (store --client-key,--client-certificate,--certificate-authority for kubectl request)
